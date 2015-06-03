@@ -58,7 +58,13 @@ describe("About Applying What We Have Learnt", function() {
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
 
-    var sum =     /* try chaining range() and reduce() */
+    var sum =  _.chain(_.range(1, 1000, 1))
+              _.reduce(function(a,b)) {
+                if(b % 3 === 0 || b % 5 === 0) {
+                  return(a+b)
+                }
+              });
+
 
     expect(233168).toBe(233168);
   });
@@ -81,7 +87,7 @@ describe("About Applying What We Have Learnt", function() {
 
     /* chain() together map(), flatten() and reduce() */
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(undefined);
   });
 
   /*********************************************************************************/
